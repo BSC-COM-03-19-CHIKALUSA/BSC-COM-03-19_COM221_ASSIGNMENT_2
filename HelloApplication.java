@@ -1,15 +1,16 @@
 package com.example.javafxassignment2;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
-import javafx.scene.layout.*;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -17,11 +18,8 @@ import java.io.IOException;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        boolean on = true;
         stage.setTitle("MyHouse");
-        HBox hBox = new HBox();
-
-        //creating the menubar
+        //Creating menuBar
         MenuBar menuBar= new MenuBar();
         Menu buttonF = new Menu("File");
         Menu buttonE = new Menu("Edit");
@@ -29,8 +27,9 @@ public class HelloApplication extends Application {
         Menu buttonV = new Menu("View");
         Menu buttonH = new Menu("Help");
         menuBar.getMenus().addAll(buttonF,buttonE,buttonT,buttonV,buttonH);
-        
-//   button declaration using parent pane
+
+
+     // Creation of Rooms
         Pane pane = new Pane();
 
         Button rectangle1 = new Button("Room1");
@@ -93,11 +92,47 @@ public class HelloApplication extends Application {
         rectangle7.setStyle("-fx-background-color: gray;-fx-border-color: black");
 
         pane.getChildren().addAll(rectangle1,rectangle2,rectangle3,rectangle4,rectangle5,rectangle6,rectangle7);
+// Creation of Rooms
+        GridPane gridPane2 = new GridPane();
+        gridPane2.setVgap(10);
+        gridPane2.setHgap(20);
+        Button button1 = new Button("AllRooms ON/OFF");
+        button1.setPrefSize(150,30);
+        GridPane.setConstraints(button1,0,1);
+        Button button2 = new Button("Room1&2 ON/OFF");
+        button2.setPrefSize(150,30);
+        GridPane.setConstraints(button2,0,2);
+        Button button3 = new Button("Room1 ON/OFF");
+        button3.setPrefSize(150,30);
 
+        GridPane.setConstraints(button3,0,3);
+        Button button4 = new Button("Room2 ON/OFF");
+        button4.setPrefSize(150,30);
+        GridPane.setConstraints(button4,1,1);
+        Button button5 = new Button("Room3 ON/OFF");
+        button5.setPrefSize(150,30);
+        GridPane.setConstraints(button5,1,2);
+        Button button6 = new Button("Room4 ON/OFF");
+        button6.setPrefSize(150,30);
+        GridPane.setConstraints(button6,1,3);
+        Button button7 = new Button("Room5 ON/OFF");
+        button7.setPrefSize(150,30);
+        GridPane.setConstraints(button7,2,1);
+        Button button8 = new Button("Room6 ON/OFF");
+        button8.setPrefSize(150,30);
+        GridPane.setConstraints(button8,2,2);
+        Button button9 = new Button("Room7 ON/OFF");
+        button9.setPrefSize(150,30);
+        GridPane.setConstraints(button9,2,3);
+        gridPane2.setAlignment(Pos.CENTER);
+        gridPane2.setPadding(new Insets(20,20,20,20));
+        gridPane2.getChildren().addAll(button1,button2,button3,button4,button5,button6,button7,button8,button9);
 
         BorderPane borderPane = new BorderPane();
         borderPane.setTop(menuBar);
         borderPane.setCenter(pane);
+        borderPane.setBottom(gridPane2);
+
         Scene scene = new Scene(borderPane,600,680);
 
         stage.setScene(scene);
