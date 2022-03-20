@@ -15,7 +15,16 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class HelloApplication extends Application {
-    @Override
+    private int a=0;
+    private int b=0;
+    private int c=0;
+    private int d=0;
+    private int e=0;
+    private int f=0;
+    private int x=0;
+    private int y=0;
+    private int z=0;
+
     public void start(Stage stage) throws IOException {
         boolean on = true;
         stage.setTitle("MyHouse");
@@ -135,74 +144,132 @@ public class HelloApplication extends Application {
         EventHandler<ActionEvent> eventHandler = new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                rectangle1.setStyle("-fx-background-color: yellow;-fx-border-color: black");
-                rectangle2.setStyle("-fx-background-color: red;-fx-border-color: black");
-                rectangle3.setStyle("-fx-background-color: red;-fx-border-color: black");
-                rectangle4.setStyle("-fx-background-color: yellow;-fx-border-color: black");
-                rectangle5.setStyle("-fx-background-color: red;-fx-border-color: black");
-                rectangle6.setStyle("-fx-background-color: yellow;-fx-border-color: black");
-                rectangle7.setStyle("-fx-background-color: green;-fx-border-color: black");
+                if(a==0) {
+                    rectangle1.setStyle("-fx-background-color: yellow;-fx-border-color: black");
+                    rectangle2.setStyle("-fx-background-color: red;-fx-border-color: black");
+                    rectangle3.setStyle("-fx-background-color: red;-fx-border-color: black");
+                    rectangle4.setStyle("-fx-background-color: yellow;-fx-border-color: black");
+                    rectangle5.setStyle("-fx-background-color: red;-fx-border-color: black");
+                    rectangle6.setStyle("-fx-background-color: yellow;-fx-border-color: black");
+                    rectangle7.setStyle("-fx-background-color: green;-fx-border-color: black");
+                    a++;
+                }else{
+                    rectangle1.setStyle("-fx-background-color: gray;-fx-border-color: black");
+                    rectangle2.setStyle("-fx-background-color: gray;-fx-border-color: black");
+                    rectangle3.setStyle("-fx-background-color: gray;-fx-border-color: black");
+                    rectangle4.setStyle("-fx-background-color: gray;-fx-border-color: black");
+                    rectangle5.setStyle("-fx-background-color: gray;-fx-border-color: black");
+                    rectangle6.setStyle("-fx-background-color: gray;-fx-border-color: black");
+                    rectangle7.setStyle("-fx-background-color: gray;-fx-border-color: black");
+                    a--;
+                }
             }
         };
         button1.setOnAction(eventHandler);
         EventHandler<ActionEvent> eventHandler0 = new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                rectangle1.setStyle("-fx-background-color: red;-fx-border-color: black");
-               rectangle7.setStyle("-fx-background-color: red;-fx-border-color: black");
+                if(b==0) {
+                    rectangle1.setStyle("-fx-background-color: red;-fx-border-color: black");
+                    rectangle7.setStyle("-fx-background-color: red;-fx-border-color: black");
+                    b++;
+                }else{
+                    rectangle1.setStyle("-fx-background-color: gray;-fx-border-color: black");
+                    rectangle7.setStyle("-fx-background-color: gray;-fx-border-color: black");
+                    b--;
+                }
             }
       };
 
-        button2.setOnAction(event -> {
-            rectangle1.setStyle("-fx-background-color: yellow;-fx-border-color: black");
-              rectangle7.setStyle("-fx-background-color: green;-fx-border-color: black");
-        });
+//        button2.setOnAction(event -> {
+//            rectangle1.setStyle("-fx-background-color: yellow;-fx-border-color: black");
+//              rectangle7.setStyle("-fx-background-color: green;-fx-border-color: black");
+//        });
 
               EventHandler<ActionEvent> eventHandler1 = new EventHandler<ActionEvent>() {
                   @Override
                   public void handle(ActionEvent actionEvent) {
+                      if(c==0){
 
                           rectangle1.setStyle("-fx-background-color: yellow;-fx-border-color: black");
+                          c++;
                       }
+                      else{
+                          rectangle1.setStyle("-fx-background-color: gray;-fx-border-color: black");
+                          c--;
+                      }
+                  }
                   };
               button3.setOnAction(eventHandler1);
 
 
               button4.setOnAction(event ->{
-                          rectangle7.setStyle("-fx-background-color: green;-fx-border-color: black");
+                  if(d==0) {
+                      rectangle7.setStyle("-fx-background-color: green;-fx-border-color: black");
+                      d++;
+                  }else {
+                      rectangle7.setStyle("-fx-background-color: gray;-fx-border-color: black");
+                      d--;
+                  }
                      });
 
 
 
         button5.setOnAction(event ->{
+            if(x==0) {
                 rectangle2.setStyle("-fx-background-color:  red;-fx-border-color: black");
+                x++;
+            }
+            else{ rectangle2.setStyle("-fx-background-color:  gray;-fx-border-color: black");
+            x--;
+              }
             }
         );
 
         button6.setOnAction(event ->{
+            if(y==0){
             rectangle3.setStyle("-fx-background-color: red;-fx-border-color: black");
+            y++;
+            }else
+            {
+                rectangle3.setStyle("-fx-background-color: gray;-fx-border-color: black");
+                y--;
+            }
             });
 
-        EventHandler<ActionEvent> eventHandler5 = new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
 
+                button7.setOnAction(event ->{
+
+        if(z==0){
                 rectangle4.setStyle("-fx-background-color: yellow;-fx-border-color: black");
-            }
-        };
-        button7.setOnAction(eventHandler5);
-        EventHandler<ActionEvent> eventHandler6 = new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
+                z++;
+        }else{
+            rectangle4.setStyle("-fx-background-color: gray;-fx-border-color: black");
+            z--;
 
-                rectangle5.setStyle("-fx-background-color: red;-fx-border-color: black");
             }
-        };
-        button8.setOnAction(eventHandler6);
+        });
+
+
+          button8.setOnAction(event ->{
+                if (f == 0) {
+                    rectangle5.setStyle("-fx-background-color: red;-fx-border-color: black");
+                    f++;
+                } else {
+                    rectangle5.setStyle("-fx-background-color: gray;-fx-border-color: black");
+                    f--;
+                }
+                });
         EventHandler<ActionEvent> eventHandler7 = new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
+                if(e==0){
                 rectangle6.setStyle("-fx-background-color: yellow;-fx-border-color: black");
+                e++;}else
+                {
+                    rectangle6.setStyle("-fx-background-color: gray;-fx-border-color: black");
+                    e--;
+                }
             }
         };
 
